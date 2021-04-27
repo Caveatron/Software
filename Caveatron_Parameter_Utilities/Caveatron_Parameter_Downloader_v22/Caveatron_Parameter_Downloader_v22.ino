@@ -1,8 +1,8 @@
 /*****************************************************************/
 //             Caveatron Parameter Downloader                    //
-//                       Version 2.1                             //
+//                       Version 2.2                             //
 /*****************************************************************/
-// Joe Mitchell, 2020-11-25
+// Joe Mitchell, 2021-04-22
 // Used to download calibration parameters from the Caveatron EEPROM
 // After loading, open a Serial Monitor window at 250000 baud to view the parameters
 
@@ -13,6 +13,7 @@
 #define ADDR_SERIAL_NUM     0x00        //Uses 1 page
 #define ADDR_HARDWARE_CODE    0x020     //Uses 1 page
 #define ADDR_SCREEN_CAL     0x080       //Uses 3 pages
+#define ADDR_BATTERY_CAL     0x140      //Uses 1 byte
 #define ADDR_ACC_CAL      0x200         //Uses 4 pages
 #define ADDR_MAG_ALIGNCAL 0x300   //Uses 2 pages
 #define ADDR_MAG_HSCAL  0x400     //Uses 4 pages
@@ -27,6 +28,8 @@
 #define ADDR_LIDARRATE_PREF 0x901
 #define ADDR_LRFRATE_PREF 0x905
 #define ADDR_SHUTDOWN_PREF  0x910
+#define ADDR_LCD_BRIGHTNESS_PREF  0x915
+#define ADDR_LCD_DIMMING_PREF 0x916
 
 // File Name
 #define ADDR_FILENAME  0xF00
@@ -44,6 +47,7 @@ void setup() {
   DownloadSerialNumber();
   DownloadHardwareCode();
   DownloadScreenCal();
+  DownloadBatteryCal();
   DownloadAccelerometerCal();
   DownloadMagnetometerAlignCal();
   DownloadMagnetometerHSCal();
@@ -52,6 +56,7 @@ void setup() {
   DownloadLidarOrientCal();
   DownloadLRFRangeCal();
   DownloadWindowCorrections();
+  DownloadPreferences();
   DownloadFileName();
 }
 
@@ -78,16 +83,25 @@ boolean DownloadHardwareCode() {
 
 void DownloadScreenCal() {
   String arr;
-  char checkArr[10];
+  char checkArr[9];
   Serial.println("Screen Calibration");
   for (int i=0; i<3; i++) {
-    arr = EEPROM_readCharArray(ADDR_SCREEN_CAL+(i*0x20), 10);
-    arr.toCharArray(checkArr, 10);
-    Serial.print("0x"+String(checkArr));
+    arr = EEPROM_readCharArray(ADDR_SCREEN_CAL+(i*0x20), 9);
+    arr.toCharArray(checkArr, 9);
+    Serial.print(String(checkArr));
     if (i<2) Serial.print(",");
   }
   Serial.println();
   Serial.println();
+}
+
+void DownloadBatteryCal() {
+  int8_t sByte;
+  Serial.println("Battery Monitor Correction");
+  sByte = EEPROM.read(ADDR_BATTERY_CAL);
+  Serial.println(sByte);
+  Serial.println(); 
+  delay(10);
 }
 
 void DownloadAccelerometerCal() {
@@ -203,6 +217,25 @@ void DownloadWindowCorrections() {
     if (i<719) Serial.print(",");
     delay(2);
   }
+  Serial.println();
+  Serial.println();
+}
+
+void DownloadPreferences() {
+  int8_t sByte;
+  Serial.println("Preferences Settings");
+  sByte = EEPROM.read(ADDR_LIDARSPEED_PREF);
+  Serial.print(sByte); Serial.print(",");
+  sByte = EEPROM.read(ADDR_LIDARRATE_PREF);
+  Serial.print(sByte); Serial.print(",");
+  sByte = EEPROM.read(ADDR_LRFRATE_PREF);
+  Serial.print(sByte); Serial.print(",");
+  sByte = EEPROM.read(ADDR_SHUTDOWN_PREF);
+  Serial.print(sByte); Serial.print(",");
+  sByte = EEPROM.read(ADDR_LCD_BRIGHTNESS_PREF);
+  Serial.print(sByte); Serial.print(",");
+  sByte = EEPROM.read(ADDR_LCD_DIMMING_PREF);
+  Serial.print(sByte);
   Serial.println();
   Serial.println();
 }

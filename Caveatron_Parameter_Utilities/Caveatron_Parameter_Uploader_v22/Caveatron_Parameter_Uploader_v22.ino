@@ -1,10 +1,16 @@
 /*****************************************************************/
 //             Caveatron Parameter Uploader                      //
-//                       Version 2.1                             //
+//                       Version 2.2                             //
 /*****************************************************************/
-// Joe Mitchell, 2020-12-02
+// Joe Mitchell, 2021-03-09
 // Used to Upload Calibration Parameters to the Caveatron EEPROM
 // Fill in your calibration parameters in the "Calibration_Parameters" tab
+
+#define displayType 4
+// displayType 1: CTE 3.5" Display - Original
+// displayType 2: CTE 3.5" Display - GHL font version with inverted colors
+// displayType 3: CTE 4" Display
+// displayType 4: BuyDisplay 3.5" 16-bit Display
 
 #include <UTFT.h>
 #include <EEPROM.h>
@@ -21,6 +27,7 @@ extern uint8_t SmallFont[];
 boolean loadSerialNum = 0;          // Unit Serial Number, 5 char
 boolean loadHardwareCode = 0;       // Unit Hardware Code, 12 char
 boolean loadScreenCal = 0;          // LCD Display Calibration, 3x1 array of 10 char
+boolean loadBatteryCal = 0;          // Battery voltage calibration - only applies to resistor measurement
 
 boolean loadAccelCal = 0;           // Accelerometer Offsets and Alignment, 3x4 float array
 
@@ -44,6 +51,7 @@ boolean loadFileName = 0;   //Used to set current file name
 #define ADDR_SERIAL_NUM     0x00        //Uses 1 page
 #define ADDR_HARDWARE_CODE    0x020     //Uses 1 page
 #define ADDR_SCREEN_CAL     0x080       //Uses 3 pages
+#define ADDR_BATTERY_CAL     0x140      //Uses 1 byte
 #define ADDR_ACC_CAL      0x200         //Uses 4 pages
 #define ADDR_MAG_ALIGNCAL 0x300   //Uses 2 pages
 #define ADDR_MAG_HSCAL  0x400     //Uses 4 pages
@@ -58,12 +66,15 @@ boolean loadFileName = 0;   //Used to set current file name
 #define ADDR_LIDARRATE_PREF 0x901
 #define ADDR_LRFRATE_PREF 0x905
 #define ADDR_SHUTDOWN_PREF  0x910
+#define ADDR_LCD_BRIGHTNESS_PREF  0x915
+#define ADDR_LCD_DIMMING_PREF 0x916
 
 #define ADDR_FILENAME   0xF00     //Uses 34 bytes
 
 extern char serialNumber[];
 extern char hardwareCode[];
-extern char screenCal[3][11];
+extern char screenCal[3][9];
+extern int8_t batteryCal[1];
 extern float accCal[4][3];
 extern float magAlignCal[8];
 extern float magCal[4][3];
@@ -81,8 +92,37 @@ void setup() {
   Serial.begin(250000);
 
   //Init GUI
-  //myGLCD.invert_colors = true;
-  myGLCD.InitLCD(PORTRAIT);
+  uint8_t LCDbacklightPin = 9;
+  switch (displayType) {
+  //For CTE35IPS Normal version (original CTE and later versions)
+  case 1:
+    myGLCD.setDisplayModel(CTE35IPS);
+    myGLCD.invert_colors = false;
+    myGLCD.InitLCD(PORTRAIT);
+    break;
+  //For CTE35IPS Inverted version (some GHL versions)
+  case 2:
+    myGLCD.setDisplayModel(CTE35IPS);
+    myGLCD.invert_colors = true;
+    myGLCD.InitLCD(PORTRAIT);
+    break;
+  //For CTE40 version
+  case 3:
+    myGLCD.setDisplayModel(CTE40);
+    myGLCD.invert_colors = false;
+    myGLCD.InitLCD(PORTRAIT);
+    break;
+  //For BuyDisplay 3.5" ILI9488 16-bit version
+  case 4:
+    myGLCD.setDisplayModel(ILI9488_16);
+    myGLCD.invert_colors = false;
+    myGLCD.screen_orientation = ORIENT_ROTATE_MIRROR;
+    myGLCD.InitLCD(PORTRAIT);
+    pinMode(LCDbacklightPin, OUTPUT);
+    analogWrite(LCDbacklightPin, 255);
+    break;
+  }
+  
   myGLCD.clrScr();
   myGLCD.setBackColor(0, 0, 0);
   myGLCD.setFont(BigFont);
@@ -123,6 +163,18 @@ void setup() {
     } else {
       myGLCD.setColor(255, 0, 0);
       myGLCD.print("Screen Cal Failed", CENTER, y);
+    }
+    y=y+20;
+  }
+  if (loadBatteryCal) {
+    UploadBatteryCal();
+    delay(100);
+    if (CheckBatteryCal()) {      
+      myGLCD.setColor(0, 255, 0);
+      myGLCD.print("Battery Cal Loaded", CENTER, y);
+    } else {
+      myGLCD.setColor(255, 0, 0);
+      myGLCD.print("Battery Cal Failed", CENTER, y);
     }
     y=y+20;
   }
@@ -265,7 +317,11 @@ void UploadHardwareCode() {
 }
 
 void UploadScreenCal() {
-  for(int i=0; i<3; i++) EEPROM_writeCharArray(ADDR_SCREEN_CAL+(i*0x20), screenCal[i], 10);
+  for(int i=0; i<3; i++) EEPROM_writeCharArray(ADDR_SCREEN_CAL+(i*0x20), screenCal[i], 8);
+}
+
+void UploadBatteryCal() {
+  Write_EEPROM_Bytes(ADDR_BATTERY_CAL, batteryCal, 1);
 }
 
 void UploadAccelerometerCal() {
@@ -317,8 +373,6 @@ void UploadLRFRangeCal() {
 void UploadLidarWindowCorrection() {
   Write_EEPROM_Bytes(ADDR_LID_WINCORRECT, lidarWindowCorrectSettings, 2);
   Write_EEPROM_Bytes(ADDR_LID_WINCORRECT+2, lidarWindowCorrection, 720);
-  //Write_EEPROM_Bytes(ADDR_LID_WINCORRECT+0x100+0x2, lidarWindowCorrection2, 256);
-  //Write_EEPROM_Bytes(ADDR_LID_WINCORRECT+0x200+0x2, lidarWindowCorrection3, 208);
 }
 
 void InitializePrefs() {
@@ -327,6 +381,8 @@ void InitializePrefs() {
   Write_EEPROM_Bytes(ADDR_LIDARRATE_PREF, b, 1);
   Write_EEPROM_Bytes(ADDR_LRFRATE_PREF, b, 1);
   Write_EEPROM_Bytes(ADDR_SHUTDOWN_PREF, b, 1);
+  Write_EEPROM_Bytes(ADDR_LCD_BRIGHTNESS_PREF, b, 1);
+  Write_EEPROM_Bytes(ADDR_LCD_DIMMING_PREF, b, 1);
 }
 
 void UploadFileName() {
@@ -351,12 +407,19 @@ boolean CheckHardwareCode() {
 
 boolean CheckScreenCal() {
   String arr[3];
-  char checkArr[10];
+  char checkArr[8];
   for (int i=0; i<3; i++) {
-    arr[i] = EEPROM_readCharArray(ADDR_SCREEN_CAL+(i*0x20), 10);
-    arr[i].toCharArray(checkArr, 10);
+    arr[i] = EEPROM_readCharArray(ADDR_SCREEN_CAL+(i*0x20), 8);
+    arr[i].toCharArray(checkArr, 8);
     if (!strcmp(checkArr, screenCal[i])) return 0;
   }
+  return 1;
+}
+
+boolean CheckBatteryCal() {
+  int8_t sByte;
+  sByte = EEPROM.read(ADDR_BATTERY_CAL);
+  if (sByte!=batteryCal[0]) return 0;
   return 1;
 }
 
@@ -461,7 +524,7 @@ boolean CheckLidarWindowCorrection() {
 }
 
 boolean CheckPrefs() {
-  int8_t aByte, bByte, cByte, dByte;
+  int8_t aByte, bByte, cByte, dByte, eByte, fByte;
   aByte = EEPROM.read(ADDR_LIDARSPEED_PREF);
   delay(2);
   bByte = EEPROM.read(ADDR_LIDARRATE_PREF);
@@ -469,7 +532,11 @@ boolean CheckPrefs() {
   cByte = EEPROM.read(ADDR_LRFRATE_PREF);
   delay(2);
   dByte = EEPROM.read(ADDR_SHUTDOWN_PREF);
-  if ((aByte!=1) || (bByte!=1) || (cByte!=1) || (dByte!=1)) return 0; 
+  delay(2);
+  eByte = EEPROM.read(ADDR_LCD_BRIGHTNESS_PREF);
+  delay(2);
+  fByte = EEPROM.read(ADDR_LCD_DIMMING_PREF);
+  if ((aByte!=1) || (bByte!=1) || (cByte!=1) || (dByte!=1) || (eByte!=1) || (fByte!=1)) return 0; 
   else return 1;
 }
 

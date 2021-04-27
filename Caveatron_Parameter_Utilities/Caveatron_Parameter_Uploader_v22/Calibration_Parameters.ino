@@ -1,12 +1,14 @@
 //Caveatron Calibration Parameters
-//Serial Number: TB000
-//Date: 2019-09-29
+//Serial Number: AA000
+//Date: 2021-04-26
 
 extern char serialNumber[] = "XX000";
 
 extern char hardwareCode[] = "B211112110-3";
 
-extern char screenCal[3][11] = {"035E836BUL","00B24E8BUL","0013F1DFUL"};
+extern char screenCal[3][9] = {"03C840B0","03DCC082","0013F1DF"};
+
+extern int8_t batteryCal[1] = {-1};
 
 //02-10-2017
 extern float accCal[4][3] = {

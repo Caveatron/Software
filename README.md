@@ -9,6 +9,23 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
+### Version 2.20
+FIRST RELEASE FOR THE NEW CAVEATRON SV! 
+The same firmware release works on both the regular Caveatron and the Caveatron SV models. The release note will indicate changes specific to each model and changes that are common across both models.
+#### Caveatron SV:
+- Adds LRUD Mode for recording left, right, up, and down measurements at each station.
+- Adds Point Mode for recording simple point measurements from a station to capture general passage dimensions. These are saved in a new file format, a .cvp file, that can be converted to a rudimentary point cloud in Caveatron Process.
+- Modification to Manual Mode including a Quickshot mode that allows acquisition of a list of fast shots similar to a traditional disto.
+#### Caveatron:
+- Fixed bug in LIDAR scan display.
+#### All:
+- Added zoom and pan to the Line Plot Viewer.
+- Added screen brightness adjustment preference and auto-dimming function (requires connection of Teensy pin 9 to LCD pin 29).
+- Added support for new battery monitor method using a resistor voltage divider connected to Teensy pin A10.
+- When connected to a PC via USB, it now appears as "Caveatron" instead of "Teensy".
+- Minor bug fixes.
+
+
 ### Version 2.10
 WARNING! You will need to create a new survey after this update since the file storage format has changed! No existing files on the card are changed but the current survey will not be accessible by the Caveatron.
 - New file storage configuration. All files for a survey are now stored together in their own directory name with the cave name and date. Settings for a survey are now stored in a .dat file in each folder (settings.txt is no longer used).

@@ -7,3 +7,5 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Adds support for converting LRUDs from the Caveatron SV to Compass Survey Software format.
 - Fixed bug so that RPLIDAR modules A2M6, A2M8, and A3M1 will show points as valid instead of filtered.
 - Assorted minor bug fixes.
+
+The User Manual has been revised to include the new functions.

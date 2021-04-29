@@ -18,6 +18,7 @@ The same firmware release works on both the regular Caveatron and the Caveatron 
 - Modification to Manual Mode including a Quickshot mode that allows acquisition of a list of fast shots similar to a traditional disto.
 #### Caveatron:
 - Fixed bug in LIDAR scan display.
+- Fixed bug where Caveatron units with v5 of the MinIMU and AltIMU would not write the scaling factor line to the IMU file.
 #### All:
 - Added zoom and pan to the Line Plot Viewer.
 - Added screen brightness adjustment preference and auto-dimming function (requires connection of Teensy pin 9 to LCD pin 29).

@@ -16,7 +16,8 @@ The same firmware release works on both the regular Caveatron and the Caveatron 
 #### All:
 - Bug fix where LCD Dimming preference would not always save
 
-### Version 2.20 (Removed from download due to major bug in Manual Mode for standard Caveatron)
+### Version 2.20 
+(Removed from download due to major bug in Manual Mode for standard Caveatron - replaced with v2.21)
 FIRST RELEASE FOR THE NEW CAVEATRON SV! 
 The same firmware release works on both the regular Caveatron and the Caveatron SV models. The release note will indicate changes specific to each model and changes that are common across both models.
 #### Caveatron SV:

@@ -9,7 +9,14 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
-### Version 2.20
+### Version 2.21
+The same firmware release works on both the regular Caveatron and the Caveatron SV models. The release note will indicate changes specific to each model and changes that are common across both models.
+#### Caveatron:
+- Fixed broken Manual Mode
+#### All:
+- Bug fix where LCD Dimming preference would not always save
+
+### Version 2.20 (Removed from download due to major bug in Manual Mode for standard Caveatron)
 FIRST RELEASE FOR THE NEW CAVEATRON SV! 
 The same firmware release works on both the regular Caveatron and the Caveatron SV models. The release note will indicate changes specific to each model and changes that are common across both models.
 #### Caveatron SV:
@@ -25,7 +32,6 @@ The same firmware release works on both the regular Caveatron and the Caveatron 
 - Added support for new battery monitor method using a resistor voltage divider connected to Teensy pin A10.
 - When connected to a PC via USB, it now appears as "Caveatron" instead of "Teensy".
 - Minor bug fixes.
-
 
 ### Version 2.10
 WARNING! You will need to create a new survey after this update since the file storage format has changed! No existing files on the card are changed but the current survey will not be accessible by the Caveatron.

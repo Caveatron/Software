@@ -9,6 +9,16 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
+### Version 2.22
+#### All Caveatron models:
+- Improved Compass Calibration:
+	- doubled number of calibration points for better accuracy.
+	- added 4 sectors to each quadrant for better point distribution.
+	- dynamic timing for point capture.
+- Improved Calibration Check to give a more meaningful result.
+#### Caveatron SV:
+- Fixed bug when an LRUD measurement fails.
+
 ### Version 2.21
 The same firmware release works on both the regular Caveatron and the Caveatron SV models. The release note will indicate changes specific to each model and changes that are common across both models.
 #### Caveatron:

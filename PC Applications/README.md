@@ -2,7 +2,7 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
-### Version 2.2.2
+### Version 2.2.2 (TEMPORARILY REMOVED FROM DOWNLOAD)
 - Added new menu item to disable or enable the LIDAR window calibration correction (enabled by default).
 - Modified scan selection list to make selected scan highlighting more visible.
 - Fixed bug where making more than one edit to a station name and/or scan code caused unexpected station name and scan code changes.

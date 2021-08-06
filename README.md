@@ -9,6 +9,14 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
+### Version 2.23
+#### All Caveatron models:
+- Fix of freeze in Line Plot View for surveys with more than 100 shots.
+- Line Plot View now displays most recent 100 shots.
+- Added preliminary support for JRT LRF module with hex protocol (LRF hangs can occur in Passage Mode scans)
+#### Caveatron:
+- Increased Passage Mode reverse speed limit to 1 m/s.
+
 ### Version 2.22
 #### All Caveatron models:
 - Improved Compass Calibration:

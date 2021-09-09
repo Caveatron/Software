@@ -4,6 +4,8 @@ This firmware is used to perform initial setup of the Caveatron after assembly. 
 
 ## Files
 
+NOTE: The HEX files do not download properly if you try to right click on them. You must click on the link for one, then click on the RAW button in the upper right and then you can download it. Alternatively, just download the ZIP file which contains all the different versions.
+
 You must select the version that is compatible with your display or Caveatron model for it to work correctly.
 - ILI9488_16 - *The new standard display model going forward.* This is the version for the BuyDisplay 3.5" 480x320 display with the resistive touchscreen, 16-bit, and 3.3V options. 
 - CTE35IPS_Normal - This version is for Coldtears Electronics 3.5" IPS touchscreens with non-inverted colors. This appears to include newer models that use the UTFT_GHL library as well as older models that used the a previous library. If the colors are inverted using this version (black text on a white background) then use the "Inverted" version.

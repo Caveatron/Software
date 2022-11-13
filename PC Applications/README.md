@@ -2,6 +2,16 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.4.0 - BETA
+- Added compatibility with new binary CVL format for Caveatron v3 (Compatibility with all previous Caveatron file formats is retained.)
+- Redesigned the scan review screen
+- Added ability to select and remove one or more scan rotations from Plan and Profile Wall plot view
+- Added ability to select and remove points from the rotation points view
+- Added ability to save Caveatron SV points into separate files by point type (walls, profiles, or cross sections)
+- Updated user manual
+Note: This beta version has not been fully tested, so bugs may exist. 
+The Mac beta version has only been tested on MacOS 11 but does not work on 10.14 or earlier.
+
 ### Version 2.2.2
 - Added new menu item to disable or enable the LIDAR window calibration correction (enabled by default).
 - Modified scan selection list to make selected scan highlighting more visible.

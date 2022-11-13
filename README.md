@@ -10,8 +10,8 @@ Caveatron Firmware, Utilities, and Desktop Software
 
 ## Caveatron Software Release Notes
 ### Version 3.00 - BETA
-Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only. 
-This is a beta version so has not yet been fully tested and a couple of minor items are incomplete.
+**Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
+*This is a beta version so has not yet been fully tested and a couple of minor items are incomplete.*
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Major rewrites to support Teensy 4.1 - Teensy 3.6 no longer supported
 - Fonts and graphics now are stored in SPI flash chip on Teensy 4.1 - external SPI flash module support removed
@@ -36,7 +36,7 @@ This is a beta version so has not yet been fully tested and a couple of minor it
 - Added ability to select point type for Points mode (plan, profile, cross section)
 
 
-The versions below are for the Teensy 3.6 Rev B version of the Caveatron
+**The versions below are for the Teensy 3.6 Rev B version of the Caveatron**
 ### Version 2.23
 #### All Caveatron models:
 - Fix of freeze in Line Plot View for surveys with more than 100 shots.

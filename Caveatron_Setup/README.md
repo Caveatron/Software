@@ -8,7 +8,8 @@ NOTE: The HEX files do not download properly if you try to right click on them. 
 
 You must select the version that is compatible with your display or Caveatron model for it to work correctly.
 ### For the Caveatron Rev C
-- Caveatron_Setup_v20 - This version is for the Rev C Teensy 4.1 version of either the Caveatron or Caveatron SV
+- Caveatron_Setup_v20 - This version is for the Rev C Teensy 4.1 version of either the Caveatron or Caveatron SV.
+*This is a beta version and has not been fully tested.*
 ### For the Caveatron Rev B
 - ILI9488_16 - *The new standard display model going forward.* This is the version for the BuyDisplay 3.5" 480x320 display with the resistive touchscreen, 16-bit, and 3.3V options. 
 - CTE35IPS_Normal - This version is for Coldtears Electronics 3.5" IPS touchscreens with non-inverted colors. This appears to include newer models that use the UTFT_GHL library as well as older models that used the a previous library. If the colors are inverted using this version (black text on a white background) then use the "Inverted" version.

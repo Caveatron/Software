@@ -27,6 +27,7 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Rewrote Live LIDAR display mode for faster and better rendering
 - Added detection and warning of magnetic anomalies when taking shots
 - Changed enclosure dimensions to a user calibration parameter instead of being hard-coded.
+- Full support for both HEX and ASCII versions of the JRT laser rangefinder modules.
 - Changed some variable declarations for less memory usage
 - Cleanup of some unused code
 - Fixes of minor bugs

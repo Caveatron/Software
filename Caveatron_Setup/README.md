@@ -8,7 +8,7 @@ NOTE: The HEX files do not download properly if you try to right click on them. 
 
 You must select the version that is compatible with your display or Caveatron model for it to work correctly.
 ### For the Caveatron Rev C
-- Caveatron_Setup_v20 - This version is for the Rev C Teensy 4.1 version of either the Caveatron or Caveatron SV.
+- Caveatron_Setup_v20 - This version is for the Rev C Teensy 4.1 version of the regular Caveatron. (A version for the SV Rev C will be released later.)
 *This is a beta version and has not been fully tested.*
 ### For the Caveatron Rev B
 - ILI9488_16 - *The new standard display model going forward.* This is the version for the BuyDisplay 3.5" 480x320 display with the resistive touchscreen, 16-bit, and 3.3V options. 

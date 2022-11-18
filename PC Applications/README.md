@@ -6,8 +6,10 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Added compatibility with new binary CVL format for Caveatron v3 (Compatibility with all previous Caveatron file formats is retained.)
 - Redesigned the scan review screen
 - Added ability to select and remove one or more scan rotations from Plan and Profile Wall plot view
-- Added ability to select and remove points from the rotation points view
-- Added ability to save Caveatron SV points into separate files by point type (walls, profiles, or cross sections)
+- Added ability to select and remove one or more points from the rotation points view
+- Added an undo context menu for the above two features.
+- Added a Reset button to remove all adjustments made in the Scan Review window and restore it to its initial state
+- Added ability to save Caveatron SV Points Mode points into separate files by point type (walls, profiles, or cross sections)
 - Updated user manual
 Note: This beta version has not been fully tested, so bugs may exist. 
 The Mac beta version has only been tested on MacOS 11 but does not work on 10.14 or earlier.

@@ -9,22 +9,17 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
-### Version 3.00 - BETA
+### Version 3.00
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
-*This is a beta version so has not yet been fully tested and a couple of minor items are incomplete.*
+
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Major rewrites to support Teensy 4.1 - Teensy 3.6 no longer supported
 - Fonts and graphics now are stored in SPI flash chip on Teensy 4.1 - external SPI flash module support removed
 - BuyDisplay 3.5" capacitive touchscreen is now the only screen supported
 - Added support for RM3100 magnetometer
-- Added support for RPLIDAR S2
-- Modifications to hopefully better support other RPLIDAR A-series units (not tested)
-- New CVL file format with compressed binary storage of LIDAR data points and data integrity check
-- Removed support for Scanse SWEEP LIDAR
 - Removed support for MAX17043 battery level detection - resistor voltage divider is now the only supported method
 - Added detection of excessive front-to-back-sight angle difference
 - Added Reshoot mode to redo front and back sights after backsight taken
-- Rewrote Live LIDAR display mode for faster and better rendering
 - Added detection and warning of magnetic anomalies when taking shots
 - Changed enclosure dimensions to a user calibration parameter instead of being hard-coded.
 - Full support for both HEX and ASCII versions of the JRT laser rangefinder modules.
@@ -32,7 +27,14 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Cleanup of some unused code
 - Fixes of minor bugs
 #### Changes for the Caveatron only:
+- Added support for RPLIDAR S2
+- Modifications to hopefully better support other RPLIDAR A-series units (not tested)
+- New CVL file format with compressed binary storage of LIDAR data points and data integrity check
+- Removed support for Scanse SWEEP LIDAR
+- Rewrote Live LIDAR display mode for faster and better rendering
 - Adjusted angle cutoff tolerance for Passage mode to account for inclination
+- Disabled the 2K scan mode for the A1 series due to unresolved issues
+- Added setting to enable or disable LIDAR window corrections for A1 series
 #### Changes for the Caveatron SV only:
 - Added ability to select point type for Points mode (plan, profile, cross section)
 

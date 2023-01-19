@@ -2,6 +2,14 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.4.1
+- Fixed issue where roll angles were not processed correctly
+- Fixed issue with detection and removal of bad IMU data
+- Improved handling of scaled displays in Windows version
+- Fixed bug that could cause program to crash when right clicking on failed scan
+- Added ability double click on point in Traverse Path and Walls View plot to jump to specific rotation
+- Updated user manual
+
 ### Version 2.4.0
 - Added compatibility with new binary CVL format for Caveatron v3 (Compatibility with all previous Caveatron file formats is retained.)
 - Redesigned the scan review screen

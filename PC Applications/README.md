@@ -5,10 +5,11 @@ Caveatron post-processing software for Windows, Mac, and Linux
 ### Version 2.4.1
 - Fixed issue where roll angles were not processed correctly
 - Fixed issue with detection and removal of bad IMU data
-- Improved handling of scaled displays in Windows version
+- Improved handling of scaled displays in the Windows version
 - Fixed bug that could cause program to crash when right clicking on failed scan
 - Added ability double click on point in Traverse Path and Walls View plot to jump to specific rotation
 - Updated user manual
+If you have difficulty with the Winx64 version, try the Winx86 version which was compiled with an older compiler version.
 
 ### Version 2.4.0
 - Added compatibility with new binary CVL format for Caveatron v3 (Compatibility with all previous Caveatron file formats is retained.)
@@ -20,7 +21,6 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Added ability to save Caveatron SV Points Mode points into separate files by point type (walls, profiles, or cross sections)
 - Bug fixes
 - Updated user manual
-If you have difficulty with the Winx64 version, try the Winx86 version which was compiled with an older compiler version.
 
 ### Version 2.2.2
 - Added new menu item to disable or enable the LIDAR window calibration correction (enabled by default).

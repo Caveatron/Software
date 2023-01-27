@@ -9,9 +9,17 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Caveatron Process Desktop software
 
 ## Caveatron Software Release Notes
-### Version 3.00
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.01
+// Moved numerous variables to a different Teensy memory area to hopefully prevent random system hangs and crashes
+// Fixed bug in LRF code that may have been causing the LRF acquisition to freeze
+// Fixed several issues with viewing LIDAR scans
+// Fixed screen brightness setting bug
+// Fixed screen dimming issue after exiting scan review mode
+// Changed status bar redraw code to prevent flashing issues
+
+### Version 3.00
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Major rewrites to support Teensy 4.1 - Teensy 3.6 no longer supported
 - Fonts and graphics now are stored in SPI flash chip on Teensy 4.1 - external SPI flash module support removed

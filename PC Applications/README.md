@@ -2,6 +2,14 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.4.2
+- Fixed issue where angle processing errors occurred in Room Mode scans if the IMU produced faulty data.
+- Fixed issue with UTM coordinates for a reference station not being processed.
+- Fixed crash issue with MacOS version when using LST, XYZ, or PLT survey file formats.
+- Fixed issues with MacOS and Linux version that did not correctly convert SRV files to Compass DAT files.
+- Fixed some display formatting bugs in Linux version.
+If you have difficulty with the Winx64 version, try the Winx86 version which was compiled with an older compiler version.
+
 ### Version 2.4.1
 - Fixed issue where roll angles were not processed correctly
 - Fixed issue with detection and removal of bad IMU data
@@ -9,7 +17,7 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Fixed bug that could cause program to crash when right clicking on failed scan
 - Added ability double click on point in Traverse Path and Walls View plot to jump to specific rotation
 - Updated user manual
-If you have difficulty with the Winx64 version, try the Winx86 version which was compiled with an older compiler version.
+
 
 ### Version 2.4.0
 - Added compatibility with new binary CVL format for Caveatron v3 (Compatibility with all previous Caveatron file formats is retained.)

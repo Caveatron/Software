@@ -7,6 +7,7 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Fixed issue with UTM coordinates for a reference station not being processed.
 - Fixed crash issue with MacOS version when using LST, XYZ, or PLT survey file formats.
 - Fixed issues with MacOS and Linux version that did not correctly convert SRV files to Compass DAT files.
+- Fixed issue with reading an older CVL format
 - Fixed some display formatting bugs in Linux version.
 If you have difficulty with the Winx64 version, try the Winx86 version which was compiled with an older compiler version.
 

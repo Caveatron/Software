@@ -40,10 +40,10 @@ extern float lidarOrientCal[1] = {90};
 
 extern float LRFRangeCal[1] = {0.09};
 
-//Dimensions: LRF back to Rear, Laser to left edge, Laser to right edge, Laser to base, 
+//Dimensions in cm: LRF back to Rear, Laser to left edge, Laser to right edge, Laser to base, 
 //            LRF back to LIDAR x, Laser to LIDAR y(+/-, +to right), Laser to LIDAR z(+/- +upward)
 //            If no LIDAR, enter 0's
-extern int8_t boxDimensions[7] = {6,4,8,2,11,1,8};
+extern float boxDimensions[7] = {10,3,6.5,2,17,1,9};
 
 extern int8_t lidarWindowCorrectSettings[2] = {2,1};
 

@@ -1,6 +1,6 @@
 //Caveatron Calibration Parameters
-//Serial Number: Cx000
-//Date: 2022-07-03
+//Serial Number: XX000
+//Date: 2023-02-12
 
 extern char serialNumber[] = "XX001";
 
@@ -43,7 +43,7 @@ extern float LRFRangeCal[1] = {0.09};
 //Dimensions in cm: LRF back to Rear, Laser to left edge, Laser to right edge, Laser to base, 
 //            LRF back to LIDAR x, Laser to LIDAR y(+/-, +to right), Laser to LIDAR z(+/- +upward)
 //            If no LIDAR, enter 0's
-extern float boxDimensions[7] = {10,3,6.5,2,17,1,9};
+extern int8_t boxDimensions[7] = {10,3,6,2,17,1,9};
 
 extern int8_t lidarWindowCorrectSettings[2] = {2,1};
 

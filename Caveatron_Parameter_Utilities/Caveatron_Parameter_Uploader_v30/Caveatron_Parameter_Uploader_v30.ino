@@ -2,7 +2,7 @@
 //             Caveatron Parameter Uploader                      //
 //                       Version 3.0                             //
 /*****************************************************************/
-// Joe Mitchell, 2023-02-08
+// Joe Mitchell, 2023-02-12
 // Used to Upload Calibration Parameters to the Caveatron EEPROM
 // Fill in your calibration parameters in the "Calibration_Parameters" tab
 
@@ -351,7 +351,7 @@ void UploadLRFRangeCal() {
 }
 
 void UploadBoxDimensions() {
-  EEPROM_writeFloatArray(ADDR_BOX_DIMENSIONS, boxDimensions, 7);
+  Write_EEPROM_Bytes(ADDR_BOX_DIMENSIONS, boxDimensions, 7);
 }
 
 void UploadLidarWindowCorrection() {

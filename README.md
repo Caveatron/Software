@@ -20,6 +20,7 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Display of Room mode scan data in View Scans menu is now working correctly
 - Improved display of Passage mode scans by implementing basic post-processing of the data
 - Reworked method of detecting excess azimuth/inclination shifts during scans to make it independent of rotation speed
+- Room mode scan now detects inclination shifts
 - Removed LIDAR overflow error check since there doesn't seem to be any affect on the scans
 #### Caveatron SV:
 - Fixed issue in Manual Mode where LRF would stop working when switching from Quickshot mode

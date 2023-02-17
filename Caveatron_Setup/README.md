@@ -18,6 +18,8 @@ You must select the version that is compatible with your display or Caveatron mo
 - CTE40 - This version is for the Coldtears Electronics 4.0" touchscreen.
 - Caveatron_SV - Version for the new survey-focused Caveatron (uses the ILI9488_16 BuyDisplay module).
 
+Version 1.5 is the last regular version. Version 1.6N does not contain the touchscreen calibration since this has caused a problem for some people. The touchscreen calibration must be done through a separate program that is located in the Touchscreen Calibration folder (select the correct one for your display). Then you must load the parameters using the Caveatron_Parameter_Uploader.
+
 The cvfont32.bin file contains the Caveatron fonts and graphics and must be loaded onto the SPI flash IC using the Caveatron_Setup firmware. It needs to be copied to a microSD card (32GB or smaller) that is inserted into the Teensy processor microSD slot in order for it to be loaded to the SPI flash.
 
 ## Summary of Setup Steps

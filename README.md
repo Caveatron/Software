@@ -11,10 +11,23 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
-### Version 3.02
-**TEMPORARILY REMOVED DUE TO MAJOR BUG FOUND AFTER RELEASE**
+### Version 3.0.2
+#### Changes in this version for both the Caveatron and Caveatron SV:
+- Fixed issue that resulted in the box dimensions being incorrectly loaded
+- Minor display fixes
+#### Changes for the Caveatron only:
+- LIDAR speed setting for S2 is now working correctly
+- Fixed issue that would cause the LRF to freeze during scans
+- Display of Room mode scan data in View Scans menu is now working correctly
+- Improved display of Passage mode scans by implementing basic post-processing of the data
+- Reworked method of detecting excess azimuth/inclination shifts during scans to make it less sensitive and more independent of rotation speed
+- Removed LIDAR overflow error check since there doesn't seem to be any affect on the scans
+#### Changes for the Caveatron SV only:
+- Fixed issue where backsight error would be wrong if LRUDs were taken first
+- Fixed issue in Manual Mode where LRF would stop working when switching from Quickshot mode
+- Fixed issue in Manual Mode where "Done" button would not be displayed
 
-### Version 3.01
+### Version 3.0.1
 - Moved numerous variables to a different Teensy memory area to hopefully prevent random system hangs and crashes
 - Fixed bug in LRF code that may have been causing the LRF acquisition to freeze
 - Fixed several issues with viewing LIDAR scans
@@ -22,7 +35,7 @@ Caveatron Firmware, Utilities, and Desktop Software
 - Fixed screen dimming issue after exiting scan review mode
 - Changed status bar redraw code to prevent flashing issues
 
-### Version 3.00
+### Version 3.0.0
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Major rewrites to support Teensy 4.1 - Teensy 3.6 no longer supported
 - Fonts and graphics now are stored in SPI flash chip on Teensy 4.1 - external SPI flash module support removed

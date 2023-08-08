@@ -2,6 +2,11 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.4.3
+- Maintenance release with changes to support compiler upgrade to Qt6
+- Added function to convert CVL v3 (binary hybrid version) to CVL v2 (text only version)
+- Minor GUI fix
+
 ### Version 2.4.2
 - Fixed issue where angle processing errors occurred in Room Mode scans if the IMU produced faulty data.
 - Fixed issue with UTM coordinates for a reference station not being processed.

@@ -11,6 +11,19 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.0.3
+#### Changes in this version for both the Caveatron and Caveatron SV:
+- Revisions to support change of development platform to VS Code/PlatformIO
+- Switched to updated Eigen library
+- Fixed bug where the station count was incorrectly computed in the Survey Statistics screen 
+- Fixed issue where Shot Review screen would freeze if there were no shots in the survey
+#### Changes for the Caveatron only:
+- Fixed issues with viewing LIDAR scans in plan view
+- Improved viewing LIDAR scan in both plan and profile by adding simplified path processing
+- Viewed LIDAR scans auto set scale when first loaded
+- Fixed issue with applying box dimension to LIDAR position during scans
+- Modified auto end scan for better reliability (now requires 3 measurements of <0.2m)
+
 ### Version 3.0.2
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Fixed issue that resulted in the box dimensions being incorrectly loaded

@@ -2,6 +2,9 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.4.4
+- Fix for processing scans from RPLIDAR A1M8 in 2K mode for CVL v3
+
 ### Version 2.4.3
 - Maintenance release with changes to support compiler upgrade to Qt6
 - Added function to convert CVL v3 (binary hybrid version) to CVL v2 (text only version)

@@ -11,6 +11,14 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.0.4
+#### Changes for the Caveatron only:
+- Fixed issues with scans and failed shots in Room Mode causing the Caveatron to freeze
+- Added function in Room Mode to allow the use of the previous splay measurement when redoing a scan or for a subsequent scan.
+- Fixed issue with splay numbering in Room Mode
+- Various modifications to reduce liklihood of a freeze during Traverse scans
+- 2K scan mode for RPLIDAR A1M8 has been fixed and restored
+
 ### Version 3.0.3
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Revisions to support change of development platform to VS Code/PlatformIO

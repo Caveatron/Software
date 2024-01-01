@@ -11,6 +11,19 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.1.0
+#### Changes in this version for both the Caveatron and Caveatron SV:
+- Increased allowed number of vectors in line plot display to 120
+- Fixed issue where too many vectors in the line plot resulted in the Caveatron crashing
+- Added setting to adjust the magnetic anomaly detection thresholds and turn on or off an audio alert
+- Fixed icon graphic offset issue
+- Adjustment to color thresholds for backsight error detection
+#### Changes for the Caveatron SV only:
+- Added GPS functionality using Adafruit Ultimate GPS module
+- GPS points can be saved as #FIX lines in the SRV file
+- #FIX lines are now displayed in purple in the shot list view
+- #FIX lines can have their station code edited or the line can be deleted
+
 ### Version 3.0.4
 #### Changes for the Caveatron only:
 - Fixed issues with scans and failed shots in Room Mode causing the Caveatron to freeze

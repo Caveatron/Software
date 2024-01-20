@@ -11,6 +11,12 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.1.1
+#### Changes in this version for both the Caveatron and Caveatron SV:
+- Very minor GUI fix
+#### Changes for the Caveatron SV only:
+- Fixed issue with Points modes not working with RM3100
+
 ### Version 3.1.0
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Increased allowed number of vectors in line plot display to 120

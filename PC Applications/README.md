@@ -2,6 +2,17 @@
 Caveatron post-processing software for Windows, Mac, and Linux
 
 ## Release Notes
+### Version 2.5.0
+- Fixed issue that prevented setting reference station coordinates in Survey Review Window when using large numbers.
+- Opening .SRV files with a #FIX station now sets that to the reference station including the FIX coordinates.
+- Opening a .LST or .XYZ selects a station with coordinates of 0 as the reference station.
+- Fixed the Update Point Cloud Coordinates function which was not working properly.
+- Improved Update Point Cloud Coordinates function operation and added option to not overwrite existing scans.
+- Added new menu item to create a new Survey File from a Caveatron Log file using new IMU values .
+- Reorganized File menu
+- Added support for upcoming CVL file version 3.1
+- Updated user manual
+
 ### Version 2.4.4
 - Fix for processing scans from RPLIDAR A1M8 in 2K mode for CVL v3
 

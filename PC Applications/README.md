@@ -8,9 +8,9 @@ Caveatron post-processing software for Windows, Mac, and Linux
 - Opening a .LST or .XYZ selects a station with coordinates of 0 as the reference station.
 - Fixed the Update Point Cloud Coordinates function which was not working properly.
 - Improved Update Point Cloud Coordinates function operation and added option to not overwrite existing scans.
-- Added new menu item to create a new Survey File from a Caveatron Log file using new IMU values .
+- Added new menu item to create a new Survey File from a Caveatron Log file using new IMU values.
 - Reorganized File menu
-- Added support for upcoming CVL file version 3.1
+- Added support for upcoming CVL file format version 3.1
 - Updated user manual
 
 ### Version 2.4.4

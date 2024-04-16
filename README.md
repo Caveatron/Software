@@ -11,6 +11,18 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.2.0
+#### Changes in this version for both the Caveatron and Caveatron SV:
+- Magnetic anomaly detection thresholds now automatically set during calibration (they can still be set manually)
+- Improved Survey Statistics page including: 
+	Depth now computed correctly 
+	Length, depth, and number of stations now computed per survey group (for unconnected survey sections)
+	Can switch between different survey section groups, if more than one.
+#### Changes for the Caveatron SV only:
+- Updated CVL format (3.1) to add IMU readings for start of scan and splay shots
+- Added control to "Start Scan" screen to disable excess angle shift checks for that scan
+- Fix for occasional system freeze when pressing "End Scan"
+
 ### Version 3.1.1
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Very minor GUI fix

@@ -15,8 +15,8 @@ Caveatron Firmware, Utilities, and Desktop Software
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Magnetic anomaly detection thresholds now automatically set during calibration (they can still be set manually)
 - Improved Survey Statistics page including: 
-	Depth now computed correctly 
-	Length, depth, and number of stations now computed per survey group (for unconnected survey sections)
+	Depth now computed correctly; 
+	Length, depth, and number of stations now computed per survey group (for unconnected survey sections);
 	Can switch between different survey section groups, if more than one.
 #### Changes for the Caveatron SV only:
 - Updated CVL format (3.1) to add IMU readings for start of scan and splay shots

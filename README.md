@@ -11,6 +11,10 @@ Caveatron Firmware, Utilities, and Desktop Software
 ## Caveatron Software Release Notes
 **Version 3 of the Caveatron software is for the Teensy 4.1 Rev C version of the Caveatron only.**
 
+### Version 3.2.1
+#### Changes for the Caveatron SV only:
+- Fixed issue where JRT HEX LRF would fail taking LRUDs and some Point measurements.
+
 ### Version 3.2.0
 #### Changes in this version for both the Caveatron and Caveatron SV:
 - Magnetic anomaly detection thresholds now automatically set during calibration (they can still be set manually)
